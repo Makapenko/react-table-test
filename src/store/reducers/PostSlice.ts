@@ -1,6 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IPost } from '../../models/IPost';
-
 interface PostState {
   posts: IPost[];
   isLoading: boolean;
@@ -29,12 +28,9 @@ export const postSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-    postsUpdateDirection: (state, action: PayloadAction<IPost[]>) => {
-      const updatedPosts = action.payload;
-      state.posts = updatedPosts;
-    }
   },
 });
 
-export const { postsUpdateDirection } = postSlice.actions;
+export const { postsFetching, postsFetchingSuccess, postsFetchingError } =
+  postSlice.actions;
 export default postSlice.reducer;
