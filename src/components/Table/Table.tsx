@@ -6,7 +6,7 @@ import TableRow from "./TableRow";
 
 import { fetchPosts } from "../../store/reducers/ActionCreators";
 import { useSelector } from "react-redux";
-import { postSelector } from "../../store/selectors";
+import { filteredPostsSelector } from "../../store/selectors";
 
 const Table = () => {
   const dispatch = useAppDispatch()
@@ -15,7 +15,7 @@ const Table = () => {
     dispatch(fetchPosts())
   }, [])
 
-  const posts = useSelector(postSelector)
+  const posts = useSelector(filteredPostsSelector)
 
   return (
     <table>
