@@ -1,33 +1,33 @@
 import { changePage } from '../../store/reducers/SortSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import styles from './Navigation.module.css'
 
 const Navigation = () => {
+  const { page } = useParams();
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector(state => state.sortReducer.currentPage);
 
-  function handlePageChange(newPage: number) {
-    dispatch(changePage(newPage));
-  }
+  useEffect(() => {
+    if (page != null) {
+      dispatch(changePage(parseInt(page)));
+    }
+  }, [dispatch, page])
+
+  const links = Array.from({ length: 5 }, (_, i) => i + 1);
+
+  // Определяем, должны ли кнопки быть неактивными
+  const prevButtonDisabled = currentPage === 1 ? styles.disabled : '';
+  const nextButtonDisabled = currentPage === 5 ? styles.disabled : '';
 
   return (
     <nav>
-      <ul>
-      <li>
-          <button onClick={() => handlePageChange(currentPage - 1)}>Ласт</button>
-        </li>
-        <li>
-          <button onClick={() => handlePageChange(1)}>1</button>
-        </li>
-        <li>
-          <button onClick={() => handlePageChange(2)}>2</button>
-        </li>
-        <li>
-          <button onClick={() => handlePageChange(3)}>3</button>
-        </li>
-        <li>
-          <button onClick={() => handlePageChange(currentPage - 1)}>Некст</button>
-        </li>
-      </ul>
+      <Link to={`/page/${currentPage - 1}`} className={prevButtonDisabled}>Назад</Link>
+      {links.map(link => (
+        <Link key={link} to={`/page/${link}`}>{link}</Link>
+      ))}
+      <Link to={`/page/${currentPage + 1}`} className={nextButtonDisabled}>Далее</Link>
     </nav>
   );
 }
