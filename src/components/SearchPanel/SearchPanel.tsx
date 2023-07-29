@@ -1,12 +1,14 @@
 import { useRef } from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { useSelector } from "react-redux";
+import styles from './SearchPanel.module.scss'
+import { useAppDispatch } from "../../hooks/redux";
 import { changeSearchQuery } from "../../store/reducers/SortSlice";
 import SearchIcon from "../icons/SearchIcon";
-import styles from './SearchPanel.module.scss'
+import { searchQuerySelector } from "../../store/selectors";
 
 const SearchPanel: React.FC = () => {
   const dispatch = useAppDispatch()
-  const searchQuery = useAppSelector(state => state.sortReducer.searchQuery);
+  const searchQuery = useSelector(searchQuerySelector);
   const inputRef = useRef<HTMLInputElement>(null);
 
   function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
@@ -18,6 +20,7 @@ const SearchPanel: React.FC = () => {
       inputRef.current.focus();
     }
   }
+
   return (
     <div className={styles.searchBar}>
       <input

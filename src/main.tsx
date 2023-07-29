@@ -14,7 +14,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/page/:page',
-    element: <App />
+    element: <App />,
+  },
+  {
+    path: '*',
+    element: <Navigate to='/page/1' />
   }
 ])
 
