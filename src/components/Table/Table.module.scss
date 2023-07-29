@@ -2,4 +2,12 @@
   margin-top: 15px;
   border-spacing: 0;
   width: 100%;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 }

@@ -3,12 +3,26 @@
   background-color: #474955;
   color: #fff;
   font-weight: 600;
-  font-size: 14px;
-  
-}
+  font-size: 1rem;
 
+  @media (min-width: 769px) {
+    height: 54px;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 30px;
+    font-size: 0.8rem;
+  }
+}
 .th {
   min-width: 70px;
+  cursor: pointer;
 }
 
 .arrowIconContainer {
@@ -17,9 +31,25 @@
   transition: transform 0.1s ease-in-out;
   position: relative;
 
-}
+  @media (min-width: 769px) {
+    margin-left: 10px;
+  }
 
-.arrowIconContainerReversed {
-  transform: rotate(180deg);
-  top: 3px
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin-left: 8px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 5px;
+  }
+
+  &.arrowIconContainerReversed {
+    transform: rotate(180deg);
+    top: 3px;
+
+    @media (max-width: 768px) {
+  
+      top: 1px;
+    }
+  }
 }

@@ -3,48 +3,89 @@
   width: 100%;
   justify-content: space-between;
   margin-top: 10px;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 }
 
 .disabled {
   pointer-events: none;
   color: #575757;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.714rem;
   text-decoration: none;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 }
 
 .enabled {
   color: #000;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.714rem;
   text-decoration: none;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 }
 
 .page {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.286rem;
   font-style: italic;
   text-decoration: none;
   margin-left: 10px;
   color: #000;
-  
+
   &:visited {
     color: #000;
   }
+
   &:first-child {
     margin-left: 0;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 1.2rem;
+    margin-left: 5px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: 5px;
   }
 }
 
 .activePage {
-  color: #7EBC3C;
+  color: #7ebc3c;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.286rem;
   font-style: italic;
   text-decoration: none;
   margin-left: 10px;
 
   &:first-child {
     margin-left: 0;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 1.2rem;
+    margin-left: 5px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: 5px;
   }
 }

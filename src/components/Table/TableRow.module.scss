@@ -1,11 +1,25 @@
 .tr {
   height: 60px;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 1rem;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    height: 55px;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 50px;
+    font-size: 0.9rem;
+  }
 }
 
 td {
   border: 1px solid #e3e6ec;
+
+  @media (max-width: 480px) {
+    padding: 5px;
+  }
 }
 
 .tdId {
@@ -14,4 +28,9 @@ td {
 
 .tdTitleBody {
   padding: 5px 10px;
+
+  @media (max-width: 480px) {
+    padding: 5px;
+    font-size: 0.9rem;
+  }
 }
