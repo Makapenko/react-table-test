@@ -58,6 +58,9 @@ export const filteredPostsSelector = createSelector(
         )
       : posts;
 
-    return filteredPosts;
+      const emptyRowsCount = 10 - filteredPosts.length;
+      const emptyRows = Array(emptyRowsCount).fill({});
+  
+      return [...filteredPosts, ...emptyRows];
   }
 );

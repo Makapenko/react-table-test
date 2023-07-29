@@ -1,0 +1,25 @@
+.tr {
+  height: 54px;
+  background-color: #474955;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  
+}
+
+.th {
+  min-width: 70px;
+}
+
+.arrowIconContainer {
+  display: inline-block;
+  margin-left: 10px;
+  transition: transform 0.1s ease-in-out;
+  position: relative;
+
+}
+
+.arrowIconContainerReversed {
+  transform: rotate(180deg);
+  top: 3px
+}

@@ -1,15 +1,16 @@
+import styles from './TableRow.module.scss'
 import { IPost } from "../../models/IPost";
 
 interface ITableRowProps {
   post: IPost;
 }
 
-const TableRow = ({ post }: ITableRowProps) => {
+const TableRow: React.FC<ITableRowProps> = ({ post }) => {
   return (
-    <tr>
-      <td>{post.id}</td>
-      <td>{post.title}</td>
-      <td>{post.body}</td>
+    <tr className={styles.tr}>
+      <td className={styles.tdId}>{post.id}</td>
+      <td className={styles.tdTitleBody}>{post.title}</td>
+      <td className={styles.tdTitleBody}>{post.body}</td>
     </tr>
   );
 }

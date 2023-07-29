@@ -1,7 +1,9 @@
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { updateSort } from "../../store/reducers/SortSlice";
+import styles from './TableHeader.module.scss'
 import { IPost } from "../../models/IPost";
 import { IColumn } from "../../models/IColumn";
+import SortArrowIcon from "../icons/SortArrowIcon";
 
 const columns: IColumn[] = [
   { key: 'id', label: 'ID' },
@@ -9,7 +11,7 @@ const columns: IColumn[] = [
   { key: 'body', label: 'Описание' },
 ];
 
-const TableHeader = () => {
+const TableHeader: React.FC = () => {
   const dispatch = useAppDispatch()
 
 
@@ -22,12 +24,14 @@ const TableHeader = () => {
 
   return (
     <thead>
-      <tr>
+      <tr className={styles.tr}>
         {columns.map(column => (
-          <th key={column.key} onClick={() => handleSortData(column.key)}>
+          <th key={column.key} onClick={() => handleSortData(column.key)} className={styles.th}>
             {column.label}
             {sortBy === column.key && (
-              <span>{sortDirection === 'ascending' ? ' ▲' : ' ▼'}</span>
+             <span className={`${styles.arrowIconContainer} ${sortDirection === 'descending' ? styles.arrowIconContainerReversed : ''}`}>
+             <SortArrowIcon />
+           </span>
             )}
           </th>
         ))}

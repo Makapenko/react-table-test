@@ -1,15 +1,16 @@
+import styles from './App.module.scss';
 import SearchPanel from './components/SearchPanel/SearchPanel';
 import Table from './components/Table/Table';
 import Navigation from './components/Navigation/Navigation';
 
-const App = () => {
+const App: React.FC = () => {
 
 
   return (
-    <div className="App">
+    <div className={styles.container}>
       <SearchPanel />
       <Table />
-      < Navigation />
+      <Navigation />
     </div>
   );
 }

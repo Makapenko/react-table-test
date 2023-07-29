@@ -4,11 +4,13 @@ import { useAppDispatch } from "../../hooks/redux";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
+import styles from './Table.module.scss'
+
 import { fetchPosts } from "../../store/reducers/ActionCreators";
 import { useSelector } from "react-redux";
 import { filteredPostsSelector } from "../../store/selectors";
 
-const Table = () => {
+const Table: React.FC = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -18,7 +20,7 @@ const Table = () => {
   const posts = useSelector(filteredPostsSelector)
 
   return (
-    <table>
+    <table className={styles.table}>
       <TableHeader />
       <tbody>
         {posts.map(post => (

@@ -1,0 +1,50 @@
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.disabled {
+  pointer-events: none;
+  color: #575757;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.enabled {
+  color: #000;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.page {
+  font-weight: 700;
+  font-size: 18px;
+  font-style: italic;
+  text-decoration: none;
+  margin-left: 10px;
+  color: #000;
+  
+  &:visited {
+    color: #000;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.activePage {
+  color: #7EBC3C;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: italic;
+  text-decoration: none;
+  margin-left: 10px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
