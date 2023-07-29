@@ -3,11 +3,11 @@ import App from './App.tsx'
 import './index.css'
 import { Provider } from 'react-redux';
 import { setupStore } from './store/store'
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Navigate, RouterProvider, createHashRouter } from 'react-router-dom';
 
 const store = setupStore()
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Navigate to='/page/1' />
