@@ -10,15 +10,15 @@ const store = setupStore()
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to='/react-table-test/page/1' />
+    element: <Navigate to='/page/1' />
   },
   {
-    path: '/react-table-test/page/:page',
+    path: '/page/:page',
     element: <App />,
   },
   {
     path: '*',
-    element: <Navigate to='/react-table-test/page/1' />
+    element: <Navigate to='/page/1' />
   }
 ])
 

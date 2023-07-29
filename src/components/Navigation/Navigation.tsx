@@ -15,7 +15,7 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     if (page != null) {
       if (parseInt(page) > 5 || parseInt(page) < 1) {
-        navigate('/react-table-test/page/1');
+        navigate('/page/1');
       } else {
         dispatch(changePage(parseInt(page)));
       }
