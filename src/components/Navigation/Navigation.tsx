@@ -15,7 +15,7 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     if (page != null) {
       if (parseInt(page) > 5 || parseInt(page) < 1) {
-        navigate('/page/1');
+        navigate('./page/1');
       } else {
         dispatch(changePage(parseInt(page)));
       }
@@ -29,13 +29,13 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className={styles.nav}>
-      <Link to={`/page/${currentPage - 1}`} className={prevButtonDisabled}>Назад</Link>
+      <Link to={`./page/${currentPage - 1}`} className={prevButtonDisabled}>Назад</Link>
       <div className={styles.pagesLink}>
         {links.map(link => (
-          <NavLink key={link} to={`/page/${link}`} className={({ isActive }) => (isActive ? styles.activePage : styles.page)} >{link}</NavLink>
+          <NavLink key={link} to={`./page/${link}`} className={({ isActive }) => (isActive ? styles.activePage : styles.page)} >{link}</NavLink>
         ))}
       </div>
-      <Link to={`/page/${currentPage + 1}`} className={nextButtonDisabled}>Далее</Link>
+      <Link to={`./page/${currentPage + 1}`} className={nextButtonDisabled}>Далее</Link>
     </nav>
   );
 }
