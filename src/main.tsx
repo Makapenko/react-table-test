@@ -20,7 +20,7 @@ const router = createHashRouter([
     path: '*',
     element: <Navigate to='/page/1' />
   }
-], { basename: "/react-table-test" })
+], )
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
