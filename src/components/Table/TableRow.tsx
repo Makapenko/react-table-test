@@ -10,8 +10,8 @@ const TableRow: React.FC<ITableRowProps> = ({ post }) => {
   return (
     <tr className={styles.tr} >
       <td className={styles.tdId}>{post.id}</td>
-      <td className={styles.tdTitleBody}>{post.title}</td>
-      <td className={styles.tdTitleBody}>{post.body}</td>
+      <td className={styles.tdTitle}>{post.title}</td>
+      <td className={styles.tdBody}>{post.body}</td>
     </tr>
   );
 }
