@@ -12,7 +12,7 @@ const Table: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchPosts())
-  }, [])
+  }, [dispatch])
 
   const posts = useSelector(filteredPostsSelector)
 
